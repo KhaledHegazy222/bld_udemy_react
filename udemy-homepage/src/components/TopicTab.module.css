@@ -1,0 +1,40 @@
+.topicBody {
+    width: 85%;
+    margin: 10px auto;
+    border: 1px solid rgb(190, 188, 188);
+    font-size: 0.9em;
+    padding: 10px;
+}
+
+.topicHeader {
+    font-size: 1.8em;
+}
+
+.topicParagraph {
+    font-size: 1em;
+    width: 75%;
+}
+
+.exploreBtn {
+    border: 1px black solid;
+    margin: 20px 0;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.coursesList {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.courseElem {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+}

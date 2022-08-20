@@ -1,0 +1,51 @@
+.courseCard {
+    width: 200px;
+    margin: 10px auto;
+}
+
+.courseTitle {
+    text-align: left;
+    height: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2px 0;
+}
+
+.courseDescription {
+    text-align: left;
+    font-size: 10px;
+    color: grey;
+    margin: 0;
+}
+
+.checked {
+    color: orange;
+}
+
+.rating {
+    display: flex;
+    height: 25px;
+    margin-bottom: 0;
+}
+
+.ratingValue {
+    color: rgb(174, 79, 31);
+    font-size: 15px;
+    font-weight: bold;
+}
+.starList {
+    padding-left: 9px;
+}
+
+.newPrice {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.oldPrice {
+    float: left;
+    margin-left: 15px;
+    font-size: 12px;
+    color: gray;
+}
