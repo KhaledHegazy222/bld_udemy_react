@@ -20,7 +20,12 @@ function TopicTab(probs) {
                 <h1 className={style.topicHeader}>{probs.title}</h1>
                 <p className={style.topicParagraph}>{probs.description}</p>
                 <button className={style.exploreBtn}>{"Explore Python"}</button>
-                <div className={style.coursesList}>{courses}</div>
+                <div className={style.coursesList}>
+                    {courses}
+                    <button className={style.nextBtn + " btn"}>
+                        <i className=" bi bi-arrow-right-circle-fill"></i>
+                    </button>
+                </div>
             </div>
         </>
     );

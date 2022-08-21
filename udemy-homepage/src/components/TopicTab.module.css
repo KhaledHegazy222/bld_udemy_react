@@ -24,6 +24,7 @@
 }
 
 .coursesList {
+    position: relative;
     display: flex;
     align-items: center;
     text-align: center;
@@ -37,4 +38,11 @@
     width: 100%;
     max-width: 200px;
     margin: 10px auto;
+}
+
+.nextBtn {
+    font-size: 30px;
+    position: absolute;
+    right: -17px;
+    top: 15%;
 }
