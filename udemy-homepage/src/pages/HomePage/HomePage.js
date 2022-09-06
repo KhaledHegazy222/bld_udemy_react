@@ -80,7 +80,7 @@ function loadCourses(data) {
 }
 
 function HomePage() {
-    let { dataRecieved, homePageData, reviewsData } = useContext(dataContext);
+    let { dataRecieved, homePageData } = useContext(dataContext);
     const [doneLoading, setDoneLoading] = useState(false);
 
     if (dataRecieved && !doneLoading) {
@@ -99,7 +99,7 @@ function HomePage() {
                         <div className="tab-content">{topicTabs}</div>
                     </>
                 ) : (
-                    <div>"spineer"</div>
+                    <div>"spinner"</div>
                 )}
             </main>
         </>

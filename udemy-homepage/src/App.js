@@ -1,15 +1,14 @@
 import "./App.css";
 import { useEffect, useState, createContext } from "react";
 import Router from "./routes";
-import { useRoutes } from "react-router-dom";
 
-import HomePage from "./pages/HomePage/HomePage";
-import CoursePage from "./pages/CoursePage/CoursePage";
 import NavBar from "./components/NavBar/NavBar";
 
 const HomePageURL = "http://localhost:3001/data";
 const ReviewsURL = "http://localhost:3002/data";
-let homePageData, reviewsData;
+const CoursePageURL = "http://localhost:3003/data";
+
+let homePageData, reviewsData, coursePageData;
 
 let dataContext = createContext();
 
@@ -21,10 +20,10 @@ function App() {
         homePageData = await response.json();
         response = await fetch(ReviewsURL);
         reviewsData = await response.json();
+        response = await fetch(CoursePageURL);
+        coursePageData = await response.json();
 
         setDataRecieved(true);
-
-        // for (let i in homePageData) console.log(i);
     };
 
     useEffect(() => {
@@ -40,6 +39,7 @@ function App() {
                     dataRecieved,
                     homePageData,
                     reviewsData,
+                    coursePageData,
                 }}
             >
                 <Router />
@@ -50,27 +50,3 @@ function App() {
 
 export default App;
 export { dataContext };
-
-// import "./App.css";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import NavBar from "./components/NavBar/NavBar";
-// import HomePage from "./pages/HomePage/HomePage";
-// import CoursePage from "./pages/CoursePage/CoursePage";
-
-// function App() {
-//     return (
-//         <div className="App">
-//             <header className="App-header"></header>
-//             <NavBar></NavBar>
-//             <BrowserRouter>
-//                 <Routes>
-//                     <Route path="/" element={<HomePage />} />
-//                     <Route path="/courses/:CourseId" element={<CoursePage />} />
-//                 </Routes>
-//             </BrowserRouter>
-//         </div>
-//     );
-// }
-
-// export default App;

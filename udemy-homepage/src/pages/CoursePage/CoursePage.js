@@ -3,11 +3,72 @@ import { dataContext } from "../../App.js";
 import { useParams } from "react-router-dom";
 
 import CourseDetailsCard from "../../components/CourseDetailsCard/CourseDetailsCard";
+import Objectives from "../../components/Objectives/Objectives";
+import CourseContent from "../../components/CourseContent/CourseContent";
+import Requirments from "../../components/Requirments/Requirments";
+import Description from "../../components/Description/Description";
+import instructors from "../../components/Instructors/Instructors";
+import Instructors from "../../components/Instructors/Instructors";
 
 let courseId;
 let topicId;
+
 let courseData;
 let courseReviewsData;
+let courseContentData;
+
+function CoursePage() {
+    let { dataRecieved, homePageData, reviewsData, coursePageData } =
+        useContext(dataContext);
+    const [doneLoading, setDoneLoading] = useState(false);
+    if (dataRecieved && !doneLoading) {
+        findCourse(homePageData, reviewsData, coursePageData);
+
+        setDoneLoading(true);
+    }
+    courseId = useParams().courseId;
+    topicId = useParams().topicId;
+
+    return (
+        <>
+            {dataRecieved ? (
+                <>
+                    <CourseDetailsCard
+                        title={courseData.title}
+                        headline={courseData.headline}
+                        rating={courseData.rating}
+                        numReviews={courseData.num_reviews}
+                        numSubscribers={courseData.num_subscribers}
+                        instructors={descriptionFromat(
+                            courseData.visible_instructors
+                        )}
+                        updateDate={courseData.last_update_date}
+                    ></CourseDetailsCard>
+                    <Objectives
+                        objectives={courseData.objectives_summary}
+                    ></Objectives>
+                    <CourseContent
+                        content={courseContentData.curriculum_context.data}
+                        id={courseId}
+                    ></CourseContent>
+                    <Requirments
+                        requirments={courseContentData.details.Requirements}
+                    ></Requirments>
+                    <Description
+                        description={courseContentData.details.description}
+                    ></Description>
+                    <Instructors
+                        instructors={courseData.visible_instructors}
+                    ></Instructors>
+                </>
+            ) : (
+                <>
+                    <div>Spinner</div>
+                </>
+            )}
+        </>
+    );
+}
 
 function descriptionFromat(data) {
     let instructors = data[0].title;
@@ -17,7 +78,7 @@ function descriptionFromat(data) {
     return instructors;
 }
 
-function findCourse(homePageData, reviewsData) {
+function findCourse(homePageData, reviewsData, coursePageData) {
     for (let topicName in homePageData) {
         if (homePageData[topicName].id == topicId) {
             let topic = homePageData[topicName];
@@ -33,37 +94,7 @@ function findCourse(homePageData, reviewsData) {
         }
     }
     courseReviewsData = reviewsData[courseId];
-}
-
-function CoursePage() {
-    let { dataRecieved, homePageData, reviewsData } = useContext(dataContext);
-    const [doneLoading, setDoneLoading] = useState(false);
-    if (dataRecieved && !doneLoading) {
-        findCourse(homePageData, reviewsData);
-        setDoneLoading(true);
-    }
-    courseId = useParams().courseId;
-    topicId = useParams().topicId;
-
-    return (
-        <>
-            {dataRecieved ? (
-                <CourseDetailsCard
-                    title={courseData.title}
-                    headline={courseData.headline}
-                    rating={courseData.rating}
-                    numReviews={courseData.num_reviews}
-                    numSubscribers={courseData.num_subscribers}
-                    instructors={descriptionFromat(
-                        courseData.visible_instructors
-                    )}
-                    updateDate={courseData.last_update_date}
-                ></CourseDetailsCard>
-            ) : (
-                <div>Spinner</div>
-            )}
-        </>
-    );
+    courseContentData = coursePageData[courseId];
 }
 
 export default CoursePage;
