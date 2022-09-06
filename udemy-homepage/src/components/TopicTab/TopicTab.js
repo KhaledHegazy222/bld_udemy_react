@@ -1,11 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import style from "./TopicTab.module.css";
-import Card from "./Card.js";
+
+import Card from "../Card/Card.js";
 function TopicTab(probs) {
     let courses = probs.courses.map((courseData) => {
         return (
             <Card
-                imgSrc={courseData.imgSrc[Object.keys(courseData.imgSrc)[0]]}
+            topicId={probs.topicId}
+                id={courseData.id}
+                imgSrc={courseData.imgSrc}
                 title={courseData.title}
                 description={courseData.description}
                 ratingValue={courseData.ratingValue}

@@ -1,0 +1,114 @@
+.navBar {
+    margin: 20px 0px;
+    height: 40px;
+    display: flex;
+    padding-bottom: 8px;
+    border-bottom: 3px solid rgb(223, 220, 220);
+}
+
+.navForm {
+    height: 100%;
+    flex-grow: 1;
+}
+
+.navElem {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0px 5px;
+}
+
+.menuDiv {
+    display: none;
+}
+
+.navMenuImg,
+.navLogoImg,
+.searchIcon,
+.navCartImg,
+.navLanguageImg {
+    height: 100%;
+}
+
+.navLinks {
+    font-size: 0.8em;
+}
+
+.navLinks:hover {
+    color: rgb(114, 23, 174);
+}
+
+.searchDiv {
+    height: 100%;
+    width: 100%;
+    border: 1px black solid;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar {
+    height: 80%;
+    border: none;
+    flex-grow: 1;
+    margin: 12px;
+}
+.searchBar:focus {
+    outline: none;
+}
+
+.searchBtn {
+    height: 100%;
+    border: 2px black solid;
+
+    font-weight: bold;
+}
+
+.logIn {
+    font-weight: 800;
+    border: 2px black solid;
+}
+
+.signUp {
+    font-weight: 800;
+    color: white;
+    background-color: black;
+}
+
+.langDiv {
+    border: 2px black solid;
+}
+
+
+/* ------------- Responsive Screen ------------- */
+
+@media screen and (max-width: 1100px) {
+    .navLinks {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .logIn,
+    .signUp,
+    .langDiv {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .searchDiv,
+    .searchBtn,
+    .cart-div {
+        display: none;
+    }
+
+    .menuDiv {
+        display: inline-block;
+    }
+    .logoDiv {
+        width: 100%;
+        flex-grow: 1;
+        justify-content: right;
+    }
+}
