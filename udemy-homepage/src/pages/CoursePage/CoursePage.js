@@ -7,8 +7,8 @@ import Objectives from "../../components/Objectives/Objectives";
 import CourseContent from "../../components/CourseContent/CourseContent";
 import Requirments from "../../components/Requirments/Requirments";
 import Description from "../../components/Description/Description";
-import instructors from "../../components/Instructors/Instructors";
 import Instructors from "../../components/Instructors/Instructors";
+import Reviews from "../../components/Reviews/Reviews";
 
 let courseId;
 let topicId;
@@ -60,6 +60,7 @@ function CoursePage() {
                     <Instructors
                         instructors={courseData.visible_instructors}
                     ></Instructors>
+                    <Reviews reviews={reviewsData[courseId].results}></Reviews>
                 </>
             ) : (
                 <>

@@ -3,6 +3,7 @@ import { useEffect, useState, createContext } from "react";
 import Router from "./routes";
 
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 
 const HomePageURL = "http://localhost:3001/data";
 const ReviewsURL = "http://localhost:3002/data";
@@ -44,6 +45,8 @@ function App() {
             >
                 <Router />
             </dataContext.Provider>
+
+            <Footer></Footer>
         </div>
     );
 }
