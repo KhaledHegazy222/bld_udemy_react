@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 function Card(probs) {
     return (
         <>
-            <Link to={"/courses/" + probs.topicId + "/" + probs.id}>
+            <Link
+                to={"/courses/" + probs.topicId + "/" + probs.id}
+                style={{ textDecoration: "none" }}
+            >
                 <article className={style.courseCard + " card"}>
                     <img
                         className={style.couresImage + " card-img-top"}

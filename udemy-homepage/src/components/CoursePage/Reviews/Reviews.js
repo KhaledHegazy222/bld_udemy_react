@@ -7,6 +7,7 @@ function Reviews({ reviews }) {
     loadReviews(reviews);
     return (
         <>
+            <h2>Reviews</h2>
             <ul>{reviewsList}</ul>
         </>
     );

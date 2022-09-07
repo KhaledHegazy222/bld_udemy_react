@@ -3,9 +3,9 @@ import { useState, useContext } from "react";
 import { dataContext } from "../../App.js";
 
 import OfferPost from "../../components/HomePage/OfferPost/OfferPost.js";
-import TopicNav from "../../components/TopicNav/TopicNav.js";
+import TopicNav from "../../components/HomePage/TopicNav/TopicNav.js";
 import TopicTab from "../../components/HomePage/TopicTab/TopicTab.js";
-
+import Spinner from "../../components/Spinner/Spinner";
 let coursesArray = [];
 
 let topicTabs = [];
@@ -89,16 +89,15 @@ function HomePage() {
 
     return (
         <>
-            <main style={{ width: "95vw", margin: "auto" }}>
-                <OfferPost></OfferPost>
+            <main style={{ width: "80vw", margin: "auto" }}>
                 {doneLoading ? (
                     <>
+                        <OfferPost></OfferPost>
                         <TopicNav></TopicNav>
-
                         <div className="tab-content">{topicTabs}</div>
                     </>
                 ) : (
-                    <div>"spinner"</div>
+                    <Spinner></Spinner>
                 )}
             </main>
         </>

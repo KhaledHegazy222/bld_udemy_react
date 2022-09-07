@@ -8,7 +8,7 @@ function Requirments({ requirments }) {
     return (
         <>
             <h2>Requirements</h2>
-            <ul>{requirmentsList} </ul>;
+            <ul>{requirmentsList} </ul>
         </>
     );
 }

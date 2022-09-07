@@ -1,5 +1,9 @@
 import React from "react";
 import Style from "../../../styles/CoursePage/CourseContent/CourseContent.module.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+
 let contentList = [];
 
 function CourseContent({ content, id }) {
@@ -17,7 +21,13 @@ function loadContent(data, id) {
     for (let i = 0; i < data.length; i++) {
         let listElements = [];
         for (let j = 0; j < data[i].items.length; j++) {
-            listElements = [...listElements, <li>{data[i].items[j].title}</li>];
+            listElements = [
+                ...listElements,
+                <li>
+                    <FontAwesomeIcon icon={faCirclePlay} />
+                    {" " + data[i].items[j].title}
+                </li>,
+            ];
         }
         contentList = [
             ...contentList,
@@ -37,13 +47,15 @@ function loadContent(data, id) {
                     id={"section" + i + "_" + id}
                 >
                     <div className="accordion-body"></div>
-                    <ul>{listElements}</ul>
+                    <ul className={Style.videosList}>{listElements}</ul>
                 </div>
             </li>,
         ];
     }
 
-    contentList = <ul className="accordion">{contentList}</ul>;
+    contentList = (
+        <ul className={"accordion " + Style.sectionsList}>{contentList}</ul>
+    );
 }
 
 export default CourseContent;

@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useContext } from "react";
-import { dataContext } from "../../App.js";
+import Style from "../../../styles/HomePage/TopicNav/TopicNav.module.css";
+
+import { dataContext } from "../../../App.js";
 
 let navElements = [];
 function TopicNav(probs) {
@@ -17,14 +19,22 @@ function TopicNav(probs) {
                 ...navElements,
 
                 idx == 0 ? (
-                    <li role="presentation" className="active">
-                        <a href={"#tab" + id} data-toggle="tab">
+                    <li role="presentation" className={"active"}>
+                        <a
+                            href={"#tab" + id}
+                            data-toggle="tab"
+                            className={Style.tabLink}
+                        >
                             {title}
                         </a>
                     </li>
                 ) : (
                     <li role="presentation">
-                        <a href={"#tab" + id} data-toggle="tab">
+                        <a
+                            href={"#tab" + id}
+                            data-toggle="tab"
+                            className={Style.tabLink}
+                        >
                             {title}
                         </a>
                     </li>

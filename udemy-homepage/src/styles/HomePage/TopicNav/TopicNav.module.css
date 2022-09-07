@@ -1,0 +1,9 @@
+.tabLink {
+    color: gray;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.active .tabLink {
+    color: black;
+}

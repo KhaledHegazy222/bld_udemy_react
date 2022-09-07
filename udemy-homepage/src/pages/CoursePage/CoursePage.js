@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import { dataContext } from "../../App.js";
 import { useParams } from "react-router-dom";
+
+import Spinner from "../../components/Spinner/Spinner.js";
+
 import CourseDetailsCard from "../../components/CoursePage/CourseDetailsCard/CourseDetailsCard.js";
 import CourseInfo from "../../components/CoursePage/CourseInfo/CourseInfo";
 import Objectives from "../../components/CoursePage/Objectives/Objectives";
@@ -33,11 +36,12 @@ function CoursePage() {
         <>
             {dataRecieved ? (
                 <>
-                    <CourseDetailsCard
+                    {/* <CourseDetailsCard
                         courseImg={courseData.image_480x270}
                         newPrice="E£149.99"
                         oldPrice="E£679.99"
-                    ></CourseDetailsCard>
+                    ></CourseDetailsCard> */}
+
                     <CourseInfo
                         title={courseData.title}
                         headline={courseData.headline}
@@ -49,27 +53,29 @@ function CoursePage() {
                         )}
                         updateDate={courseData.last_update_date}
                     ></CourseInfo>
-                    <Objectives
-                        objectives={courseData.objectives_summary}
-                    ></Objectives>
-                    <CourseContent
-                        content={courseContentData.curriculum_context.data}
-                        id={courseId}
-                    ></CourseContent>
-                    <Requirments
-                        requirments={courseContentData.details.Requirements}
-                    ></Requirments>
-                    <Description
-                        description={courseContentData.details.description}
-                    ></Description>
-                    <Instructors
-                        instructors={courseData.visible_instructors}
-                    ></Instructors>
-                    <Reviews reviews={courseReviewsData.results}></Reviews>
+                    <div style={{ width: "40vw", marginLeft: "20vw" }}>
+                        <Objectives
+                            objectives={courseData.objectives_summary}
+                        ></Objectives>
+                        <CourseContent
+                            content={courseContentData.curriculum_context.data}
+                            id={courseId}
+                        ></CourseContent>
+                        <Requirments
+                            requirments={courseContentData.details.Requirements}
+                        ></Requirments>
+                        <Description
+                            description={courseContentData.details.description}
+                        ></Description>
+                        <Instructors
+                            instructors={courseData.visible_instructors}
+                        ></Instructors>
+                        <Reviews reviews={courseReviewsData.results}></Reviews>
+                    </div>
                 </>
             ) : (
                 <>
-                    <div>Spinner</div>
+                    <Spinner></Spinner>
                 </>
             )}
         </>

@@ -1,0 +1,71 @@
+.footer {
+    background-color: rgb(33, 31, 31);
+    color: white;
+}
+
+.fHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.fHeaderTxt {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.fLink {
+    color: rgb(221, 195, 246);
+}
+.sponsers {
+    display: inline-block;
+}
+.sponsersList {
+    list-style-type: none;
+    display: flex;
+}
+.sponsersListElem{
+    margin-left: 20px;
+}
+.mainSection {
+    margin: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.udemyPages {
+    margin-right: 50px;
+    list-style-type: none;
+    display: inline-block;
+    font-size: 0.8em;
+}
+.listElem {
+    padding-top: 5px;
+}
+.langBtn {
+    color: white;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    background-color: rgb(33, 31, 31);
+    height: 50px;
+}
+
+.langTxt {
+    margin: auto 10px;
+}
+
+.logoCopyRights {
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 30px;
+}
+
+.copyRights {
+    font-size: 0.6em;
+}
