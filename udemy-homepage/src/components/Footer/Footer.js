@@ -1,4 +1,5 @@
 import React from "react";
+import Style from "../../styles/Footer/Footer.module.css";
 import UdemyLogo from "../../media/logo-udemy-inverted.svg";
 
 function Footer() {

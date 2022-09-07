@@ -1,12 +1,11 @@
 import React from "react";
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { dataContext } from "../../App.js";
 
-import OfferPost from "../../components/OfferPost/OfferPost.js";
+import OfferPost from "../../components/HomePage/OfferPost/OfferPost.js";
 import TopicNav from "../../components/TopicNav/TopicNav.js";
-import TopicTab from "../../components/TopicTab/TopicTab.js";
+import TopicTab from "../../components/HomePage/TopicTab/TopicTab.js";
 
-// let data;
 let coursesArray = [];
 
 let topicTabs = [];
@@ -40,8 +39,8 @@ function loadCourses(data) {
                     ratingValue: Math.round(tabData.items[i].rating * 10) / 10,
                     oldPrice: "E£" + tabData.items[i].price,
                     newPrice: "E£" + tabData.items[i].price,
-                    oldPrice: "E£163.400",
-                    newPrice: "E£163.400",
+                    oldPrice: "E£149.99",
+                    newPrice: "E£679.99",
                 },
             ];
         }

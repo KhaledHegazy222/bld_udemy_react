@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { dataContext } from "../../App.js";
 import { useParams } from "react-router-dom";
-
-import CourseDetailsCard from "../../components/CourseDetailsCard/CourseDetailsCard";
-import Objectives from "../../components/Objectives/Objectives";
-import CourseContent from "../../components/CourseContent/CourseContent";
-import Requirments from "../../components/Requirments/Requirments";
-import Description from "../../components/Description/Description";
-import Instructors from "../../components/Instructors/Instructors";
-import Reviews from "../../components/Reviews/Reviews";
+import CourseDetailsCard from "../../components/CoursePage/CourseDetailsCard/CourseDetailsCard.js";
+import CourseInfo from "../../components/CoursePage/CourseInfo/CourseInfo";
+import Objectives from "../../components/CoursePage/Objectives/Objectives";
+import CourseContent from "../../components/CoursePage/CourseContent/CourseContent";
+import Requirments from "../../components/CoursePage/Requirments/Requirments";
+import Description from "../../components/CoursePage/Description/Description";
+import Instructors from "../../components/CoursePage/Instructors/Instructors";
+import Reviews from "../../components/CoursePage/Reviews/Reviews";
 
 let courseId;
 let topicId;
@@ -34,6 +34,11 @@ function CoursePage() {
             {dataRecieved ? (
                 <>
                     <CourseDetailsCard
+                        courseImg={courseData.image_480x270}
+                        newPrice="E£149.99"
+                        oldPrice="E£679.99"
+                    ></CourseDetailsCard>
+                    <CourseInfo
                         title={courseData.title}
                         headline={courseData.headline}
                         rating={courseData.rating}
@@ -43,7 +48,7 @@ function CoursePage() {
                             courseData.visible_instructors
                         )}
                         updateDate={courseData.last_update_date}
-                    ></CourseDetailsCard>
+                    ></CourseInfo>
                     <Objectives
                         objectives={courseData.objectives_summary}
                     ></Objectives>
@@ -60,7 +65,7 @@ function CoursePage() {
                     <Instructors
                         instructors={courseData.visible_instructors}
                     ></Instructors>
-                    <Reviews reviews={reviewsData[courseId].results}></Reviews>
+                    <Reviews reviews={courseReviewsData.results}></Reviews>
                 </>
             ) : (
                 <>

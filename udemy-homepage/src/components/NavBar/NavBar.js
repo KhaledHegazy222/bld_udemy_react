@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "./NavBar.module.css";
+import Style from "../../styles/NavBar/NavBar.module.css";
 
 import UdemyLogo from "../../media/logo-udemy.svg";
 import MenuIcon from "../../media/menu.png";
