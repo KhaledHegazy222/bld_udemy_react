@@ -1,3 +1,38 @@
+.commentsList {
+    list-style-type: none;
+}
+
+.commentsListElem {
+    display: flex;
+    margin: 10px auto;
+}
+.commentImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.commentData {
+    margin: 5px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.starList {
+    padding: 0;
+}
 .checked {
     color: orange;
+}
+
+.commentContent {
+    font-size: 0.6em;
+    margin: 0;
+}
+.commentReview {
+    color: gray;
+    font-size: 0.55em;
+    margin: 0;
 }

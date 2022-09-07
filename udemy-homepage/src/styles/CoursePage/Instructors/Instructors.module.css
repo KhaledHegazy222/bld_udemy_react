@@ -1,0 +1,26 @@
+.instructorsList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    color: purple;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
+.jobTitle {
+    color: gray;
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.image {
+    border-radius: 100%;
+}
+.instructorDescription {
+    font-size: 0.7em;
+}
+
+/*60 word*/

@@ -1,0 +1,14 @@
+.btn{
+    margin: 10px;
+    border-radius: 100%;
+}
+
+
+.idle {
+    background-color: white;
+    color: black;
+}
+.clicked {
+    background-color: black;
+    color: white;
+}

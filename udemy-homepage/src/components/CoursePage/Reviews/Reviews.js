@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "../../../styles/CoursePage/Reviews/Reviews.module.css";
-
+import Like from "../Like/Like";
 let reviewsList = [];
 
 function Reviews({ reviews }) {
@@ -8,7 +8,7 @@ function Reviews({ reviews }) {
     return (
         <>
             <h2>Reviews</h2>
-            <ul>{reviewsList}</ul>
+            <ul className={Style.commentsList}> {reviewsList}</ul>
         </>
     );
 }
@@ -30,12 +30,20 @@ function loadReviews(data) {
         }
         reviewsList = [
             ...reviewsList,
-            <li>
-                <img src={data[i].user.image_50x50} />
-
-                <ul>{starList}</ul>
-                <p>{data[i].content}</p>
-                <p>Was this review helpful?</p>
+            <li className={Style.commentsListElem}>
+                <img
+                    className={Style.commentImg}
+                    src={data[i].user.image_50x50}
+                />
+                <div className={Style.commentData}>
+                    <div className={Style.title}>{data[i].user.title}</div>
+                    <ul className={Style.starList}>{starList}</ul>
+                    <p className={Style.commentContent}>{data[i].content}</p>
+                    <p className={Style.commentReview}>
+                        Was this review helpful?
+                    </p>
+                    <Like></Like>
+                </div>
             </li>,
         ];
     }
