@@ -11,6 +11,7 @@ import CourseContent from "../../components/CoursePage/CourseContent/CourseConte
 import Requirments from "../../components/CoursePage/Requirments/Requirments";
 import Description from "../../components/CoursePage/Description/Description";
 import Instructors from "../../components/CoursePage/Instructors/Instructors";
+import Feedback from "../../components/CoursePage/Feedback/Feedback";
 import Reviews from "../../components/CoursePage/Reviews/Reviews";
 
 let courseId;
@@ -70,6 +71,9 @@ function CoursePage() {
                         <Instructors
                             instructors={courseData.visible_instructors}
                         ></Instructors>
+                        <Feedback 
+                            rating={courseData.rating}
+                            ></Feedback>
                         <Reviews reviews={courseReviewsData.results}></Reviews>
                     </div>
                 </>

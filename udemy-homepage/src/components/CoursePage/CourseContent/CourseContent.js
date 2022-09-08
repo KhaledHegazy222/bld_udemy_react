@@ -10,7 +10,7 @@ function CourseContent({ content, id }) {
     loadContent(content.sections, id);
     return (
         <>
-            <h3>Course Content</h3>
+            <h3 className={Style.contentHeader} >Course Content</h3>
             {contentList}
         </>
     );

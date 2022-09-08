@@ -7,7 +7,7 @@ function Reviews({ reviews }) {
     loadReviews(reviews);
     return (
         <>
-            <h2>Reviews</h2>
+            <h2 className={Style.reviewsHeader}>Reviews</h2>
             <ul className={Style.commentsList}> {reviewsList}</ul>
         </>
     );

@@ -1,6 +1,9 @@
+.courseCardLink {
+    text-decoration: none;
+}
+
 .courseCard {
     width: 200px;
-    margin: 10px auto;
 }
 
 .courseTitle {
@@ -42,7 +45,7 @@
     float: left;
     font-size: 13px;
     font-weight: bold;
-    color:  black;
+    color: black;
 }
 
 .oldPrice {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from "../../../styles/HomePage/TopicTab/TopicTab.module.css";
+import Style from "../../../styles/HomePage/TopicTab/TopicTab.module.css";
 
 import Card from "../Card/Card.js";
 function TopicTab(probs) {
@@ -20,13 +20,13 @@ function TopicTab(probs) {
     });
     return (
         <>
-            <div className={style.topicBody}>
-                <h1 className={style.topicHeader}>{probs.title}</h1>
-                <p className={style.topicParagraph}>{probs.description}</p>
-                <button className={style.exploreBtn}>{"Explore Python"}</button>
-                <div className={style.coursesList}>
+            <div className={Style.topicBody}>
+                <h1 className={Style.topicHeader}>{probs.title}</h1>
+                <p className={Style.topicParagraph}>{probs.description}</p>
+                <button className={Style.exploreBtn}>{"Explore Python"}</button>
+                <div className={Style.coursesList}>
                     {courses}
-                    <button className={style.nextBtn + " btn"}>
+                    <button className={Style.nextBtn + " btn"}>
                         <i className=" bi bi-arrow-right-circle-fill"></i>
                     </button>
                 </div>

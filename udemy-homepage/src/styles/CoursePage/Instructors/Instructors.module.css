@@ -1,3 +1,7 @@
+.header {
+    font-size: 1.3em;
+}
+
 .instructorsList {
     list-style-type: none;
     margin: 0;
@@ -22,5 +26,3 @@
 .instructorDescription {
     font-size: 0.7em;
 }
-
-/*60 word*/

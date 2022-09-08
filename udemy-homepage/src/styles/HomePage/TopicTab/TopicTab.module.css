@@ -26,7 +26,7 @@
 .coursesList {
     position: relative;
     display: grid;
-    margin: 0;
+    margin: 0;  
     width: 100%;
     overflow: hidden;
     list-style: none;
@@ -40,7 +40,6 @@
 .courseElem {
     width: 100%;
     max-width: 200px;
-    margin: 10px auto;
 }
 
 .nextBtn {

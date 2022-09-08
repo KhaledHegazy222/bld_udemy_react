@@ -6,7 +6,7 @@ function Card(probs) {
         <>
             <Link
                 to={"/courses/" + probs.topicId + "/" + probs.id}
-                style={{ textDecoration: "none" }}
+                className={style.courseCardLink}
             >
                 <article className={style.courseCard + " card"}>
                     <img

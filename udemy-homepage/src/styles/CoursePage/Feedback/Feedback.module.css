@@ -1,0 +1,58 @@
+.feedbackHeader {
+    font-size: 1.3em;
+}
+.feedbackContent {
+    width: 100%;
+    display: flex;
+}
+.courseRating {
+    display: inline-block;
+    width: 20%;
+    padding: 10px;
+}
+.ratingValue {
+    color: rgb(201, 131, 0);
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+}
+.starListRating {
+    text-align: center;
+    font-size: 0.7em;
+}
+.ratingText {
+    color: rgb(201, 131, 0);
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+.starNum {
+    width: 80%;
+}
+.singleStar {
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.checked {
+    color: orange;
+}
+.countainerProgress {
+    width: 70%;
+    background-color: rgb(219, 212, 212);
+    border: 1px solid rgb(219, 212, 212);
+}
+
+.currentProgress {
+    background-color: rgb(138, 133, 133);
+    height: 7px;
+}
+
+.precentage {
+    display: inline-block;
+    width: 10px;
+    font-size: 0.7em;
+    text-decoration: underline;
+    color: purple;
+}
