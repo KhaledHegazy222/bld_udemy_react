@@ -1,0 +1,123 @@
+.courseCardBody {
+    background-color: white;
+    position: fixed;
+    right: 14%;
+    width: 22%;
+    border: 1px solid rgb(173, 171, 171);
+}
+
+.courseImg {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.priceData {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+.newPrice {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.7em;
+    padding: 2px;
+}
+.oldPrice {
+    padding: 2px;
+    margin: 0;
+    font-size: 0.8em;
+    color: gray;
+}
+.offerPrecentage {
+    padding: 2px;
+    margin: 0;
+    font-size: 0.8em;
+}
+.offerTime {
+    color: rgb(186, 51, 51);
+    width: 90%;
+    margin: auto;
+}
+.addToCartBtn {
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    border-style: none;
+    background-color: rgb(165, 66, 165);
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    height: 40px;
+}
+.buyNowBtn {
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 0.9em;
+    height: 40px;
+}
+.gurantee {
+    text-align: center;
+    font-size: 0.8em;
+    color: gray;
+}
+.courseIncludes {
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.courseFeatures {
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.featureListElem {
+    width: 100%;
+    padding: 0;
+    margin: -10px;
+}
+.featureIcon {
+    display: inline-block;
+    width: 20px;
+}
+.featureTxt {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.cardLinks {
+    display: flex;
+    justify-content: space-around;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.line {
+    width: 90%;
+    margin: auto;
+}
+
+.groupOffer {
+    width: 85%;
+    margin: 10px auto;
+}
+.groupOfferHeader {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.groupOfferContent {
+    font-size: 0.7em;
+}
+
+.businessBtn {
+    width: 100%;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: 0.9em;
+    height: 40px;
+}

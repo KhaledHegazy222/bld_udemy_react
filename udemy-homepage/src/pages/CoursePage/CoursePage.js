@@ -37,11 +37,11 @@ function CoursePage() {
         <>
             {dataRecieved ? (
                 <>
-                    {/* <CourseDetailsCard
+                    <CourseDetailsCard
                         courseImg={courseData.image_480x270}
                         newPrice="E£149.99"
                         oldPrice="E£679.99"
-                    ></CourseDetailsCard> */}
+                    ></CourseDetailsCard>
 
                     <CourseInfo
                         title={courseData.title}
@@ -71,9 +71,7 @@ function CoursePage() {
                         <Instructors
                             instructors={courseData.visible_instructors}
                         ></Instructors>
-                        <Feedback 
-                            rating={courseData.rating}
-                            ></Feedback>
+                        <Feedback rating={courseData.rating}></Feedback>
                         <Reviews reviews={courseReviewsData.results}></Reviews>
                     </div>
                 </>
