@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState, createContext } from "react";
+
 import Router from "./routes";
 
 import NavBar from "./components/NavBar/NavBar";

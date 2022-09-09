@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useRef } from "react";
 import Style from "../../styles/NavBar/NavBar.module.css";
 
 import UdemyLogo from "../../media/logo-udemy.svg";
@@ -7,7 +7,11 @@ import SearchIcon from "../../media/search.png";
 import CartIcon from "../../media/cart.webp";
 import LanguageIcon from "../../media/language.png";
 
+import { useNavigate } from "react-router-dom";
+
 function NavBar() {
+    const navigate = useNavigate();
+    const inputRef = useRef();
     return (
         <nav className={Style.navBar}>
             <div className={Style.navElem + " " + Style.menuDiv}>
@@ -29,11 +33,9 @@ function NavBar() {
             <div className={Style.navElem + " " + Style.navLinks}>
                 Categories
             </div>
-            <form
-                className={Style.navForm + " " + Style.navElem}
-                action="./search.php"
+            <form className={Style.navForm + " " + Style.navElem}
                 target="_blank"
-                method="get"
+            
             >
                 <div className={Style.searchDiv}>
                     <img
@@ -42,18 +44,26 @@ function NavBar() {
                         alt="search icon"
                     />
                     <input
+                        ref={inputRef}
                         className={Style.searchBar}
                         type="text"
                         placeholder="Search for anything"
                         id="search-bar"
                     />
                 </div>
-                <input
+                <button
+                    type="button"
                     className={Style.searchBtn + " " + Style.navElem}
-                    type="submit"
-                    value="search"
                     id="search-btn"
-                />
+                    onClick={() => {
+                        navigate({
+                            pathname: "/search",
+                            search: "?searchBar=" + inputRef.current.value,
+                        });
+                    }}
+                >
+                    search
+                </button>
             </form>
             <div className={Style.navElem + " " + Style.navLinks}>
                 Udemy Business

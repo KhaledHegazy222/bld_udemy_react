@@ -93,7 +93,7 @@ function HomePage() {
                 {doneLoading ? (
                     <>
                         <OfferPost></OfferPost>
-                        <TopicNav></TopicNav>
+                        <TopicNav searchString=""></TopicNav>
                         <div className="tab-content">{topicTabs}</div>
                     </>
                 ) : (
