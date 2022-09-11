@@ -1,5 +1,10 @@
+.courseCardDiv {
+    margin: 0 auto;
+}
 .courseCardLink {
+    margin: 0 auto;
     text-decoration: none;
+    width: 100%;
 }
 
 .courseCard {

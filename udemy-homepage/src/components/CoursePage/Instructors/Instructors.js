@@ -1,5 +1,9 @@
 import React from "react";
 import Style from "../../../styles/CoursePage/Instructors/Instructors.module.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar,faCirclePlay,faUserGroup,faAward } from "@fortawesome/free-solid-svg-icons";
+
 let instructorsList = [];
 
 function Instructors({ instructors }) {
@@ -20,7 +24,25 @@ function loadInstructors(data) {
             <li>
                 <h4 className={Style.title}>{data[i].title}</h4>
                 <p className={Style.jobTitle}>{data[i].job_title}</p>
-                <img className={Style.image} src={data[i].image_100x100} />
+                <div className={Style.instructorsDataDiv}>
+                    <img className={Style.image} src={data[i].image_100x100} />
+                    <ul className={Style.instructorAchievmentsList}>
+                        <li>
+                            <FontAwesomeIcon className={Style.achievmentsIcon} icon={faStar} /> 4.4 Instructor
+                            Rating
+                        </li>
+                        <li>
+                            <FontAwesomeIcon className={Style.achievmentsIcon} icon={faAward} /> 73,661 Reviews
+                        </li>
+                        <li>
+                            <FontAwesomeIcon className={Style.achievmentsIcon} icon={faUserGroup} /> 888,995 Students
+                        </li>
+                        <li>
+                            <FontAwesomeIcon className={Style.achievmentsIcon} icon={faCirclePlay} /> 16 Courses
+                        </li>
+                    </ul>
+                </div>
+
                 <p className={Style.instructorDescription}>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's

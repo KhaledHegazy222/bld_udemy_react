@@ -1,0 +1,67 @@
+.popCardDiv {
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.title {
+    font-size: 1.2em;
+}
+
+.title:hover {
+    color: purple;
+}
+
+.updateText {
+    font-size: 0.9em;
+    color: green;
+}
+.updateDate {
+    font-weight: bold;
+}
+
+.courseDetails {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.headline {
+    font-size: 0.95em;
+}
+.objectivesList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.objectivesElement {
+    margin: 0;
+    padding: 0;
+}
+
+.buttonsList {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+.addToCartBtn {
+    width: 80%;
+    height: 100%;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: rgb(195, 66, 195);
+    border-style: none;
+    color: white;
+}
+.addToCartBtn:hover {
+    background-color: rgb(136, 44, 136);
+}
+
+.favourites {
+    font-size: 2em;
+    border-radius: 100%;
+    border: 2px solid black;
+}

@@ -22,7 +22,10 @@ function SeachPage() {
 
     if (dataRecieved) {
         loadCourses(homePageData, searchString);
-        if (!doneLoading) setDoneLoading(true);
+        if (!doneLoading) {
+            document.documentElement.scrollTop = 0;
+            setDoneLoading(true);
+        }
     }
 
     return (

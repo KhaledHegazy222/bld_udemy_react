@@ -23,6 +23,21 @@
 .image {
     border-radius: 100%;
 }
+.instructorsDataDiv {
+    display: flex;
+    align-items: center;
+}
+.instructorAchievmentsList {
+    list-style-type: none;
+    font-size: 0.7em;
+}
+.achievmentsIcon {
+    width: 10px;
+}
 .instructorDescription {
     font-size: 0.7em;
+}
+summary {
+    color: purple;
+    font-weight: bold;
 }

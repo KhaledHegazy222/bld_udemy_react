@@ -10,6 +10,33 @@ let coursesArray = [];
 
 let topicTabs = [];
 
+function HomePage() {
+    let { dataRecieved, homePageData } = useContext(dataContext);
+    const [doneLoading, setDoneLoading] = useState(false);
+
+    if (dataRecieved && !doneLoading) {
+        loadCourses(homePageData);
+        document.documentElement.scrollTop = 0;
+        setDoneLoading(true);
+    }
+
+    return (
+        <>
+            <main style={{ width: "80vw", margin: "auto" }}>
+                {doneLoading ? (
+                    <>
+                        <OfferPost></OfferPost>
+                        <TopicNav searchString=""></TopicNav>
+                        <div className="tab-content">{topicTabs}</div>
+                    </>
+                ) : (
+                    <Spinner></Spinner>
+                )}
+            </main>
+        </>
+    );
+}
+
 function descriptionFromat(data) {
     let instructors = data[0].title;
     for (let j = 1; j < data.length; j++) {
@@ -36,11 +63,13 @@ function loadCourses(data) {
                     title: tabData.items[i].title,
                     imgSrc: tabData.items[i].image_125_H,
                     description: instructors,
+                    headline: tabData.items[i].headline,
                     ratingValue: Math.round(tabData.items[i].rating * 10) / 10,
                     oldPrice: "E£" + tabData.items[i].price,
                     newPrice: "E£" + tabData.items[i].price,
                     oldPrice: "E£149.99",
                     newPrice: "E£679.99",
+                    objectives_summary: tabData.items[i].objectives_summary,
                 },
             ];
         }
@@ -76,32 +105,6 @@ function loadCourses(data) {
         ];
         idx++;
     }
-}
-
-function HomePage() {
-    let { dataRecieved, homePageData } = useContext(dataContext);
-    const [doneLoading, setDoneLoading] = useState(false);
-
-    if (dataRecieved && !doneLoading) {
-        loadCourses(homePageData);
-        setDoneLoading(true);
-    }
-
-    return (
-        <>
-            <main style={{ width: "80vw", margin: "auto" }}>
-                {doneLoading ? (
-                    <>
-                        <OfferPost></OfferPost>
-                        <TopicNav searchString=""></TopicNav>
-                        <div className="tab-content">{topicTabs}</div>
-                    </>
-                ) : (
-                    <Spinner></Spinner>
-                )}
-            </main>
-        </>
-    );
 }
 
 export default HomePage;

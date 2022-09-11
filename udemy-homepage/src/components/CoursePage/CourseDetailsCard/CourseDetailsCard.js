@@ -11,8 +11,7 @@ import {
     faBell,
 } from "@fortawesome/free-solid-svg-icons";
 
-function CourseDetailsCard({ courseImg, newPrice, oldPrice }) {
-    console.log(window.scrollY);
+function CourseDetailsCard({ reachBottom, courseImg, newPrice, oldPrice }) {
     return (
         <>
             <div className={Style.courseCardBody}>

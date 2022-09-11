@@ -1,10 +1,12 @@
 import "./App.css";
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState, useCallback, createContext } from "react";
+import { useRoutes } from "react-router-dom";
 
-import Router from "./routes";
+import pages from "./routes";
 
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const HomePageURL = "http://localhost:3001/data";
 const ReviewsURL = "http://localhost:3002/data";
@@ -15,9 +17,12 @@ let homePageData, reviewsData, coursePageData;
 let dataContext = createContext();
 
 function App() {
-    const [dataRecieved, setDataRecieved] = useState(false);
+    const [scrollTop, setScrollTop] = useState(0);
+    const [reachBottom, setReachBottom] = useState(0);
 
-    const fetchData = async (url) => {
+    const [dataRecieved, setDataRecieved] = useState(false);
+    const Router = useRoutes(pages);
+    const fetchData = useCallback(async (url) => {
         let response = await fetch(HomePageURL);
         homePageData = await response.json();
         response = await fetch(ReviewsURL);
@@ -26,11 +31,14 @@ function App() {
         coursePageData = await response.json();
 
         setDataRecieved(true);
-    };
-
-    useEffect(() => {
-        fetchData();
     }, []);
+
+    useEffect(
+        () => async () => {
+            await fetchData();
+        },
+        [fetchData]
+    );
 
     return (
         <div className="App">
@@ -39,12 +47,13 @@ function App() {
             <dataContext.Provider
                 value={{
                     dataRecieved,
+                    reachBottom,
                     homePageData,
                     reviewsData,
                     coursePageData,
                 }}
             >
-                <Router />
+                {Router}
             </dataContext.Provider>
 
             <Footer></Footer>
@@ -54,3 +63,7 @@ function App() {
 
 export default App;
 export { dataContext };
+
+/*
+    mask image (show more)
+*/

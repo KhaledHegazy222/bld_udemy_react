@@ -12,9 +12,11 @@ function TopicTab(probs) {
                 imgSrc={courseData.imgSrc}
                 title={courseData.title}
                 description={courseData.description}
+                headline={courseData.headline}
                 ratingValue={courseData.ratingValue}
                 newPrice={courseData.newPrice}
                 oldPrice={courseData.oldPrice}
+                objectives_summary={courseData.objectives_summary}
             ></Card>
         );
     });
@@ -24,12 +26,7 @@ function TopicTab(probs) {
                 <h1 className={Style.topicHeader}>{probs.title}</h1>
                 <p className={Style.topicParagraph}>{probs.description}</p>
                 <button className={Style.exploreBtn}>{"Explore Python"}</button>
-                <div className={Style.coursesList}>
-                    {courses}
-                    <button className={Style.nextBtn + " btn"}>
-                        <i className=" bi bi-arrow-right-circle-fill"></i>
-                    </button>
-                </div>
+                <div className={Style.coursesList}>{courses}</div>
             </div>
         </>
     );

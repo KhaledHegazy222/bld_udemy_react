@@ -22,12 +22,12 @@ let courseReviewsData;
 let courseContentData;
 
 function CoursePage() {
-    let { dataRecieved, homePageData, reviewsData, coursePageData } =
+    let { dataRecieved,reachBottom ,homePageData, reviewsData, coursePageData } =
         useContext(dataContext);
     const [doneLoading, setDoneLoading] = useState(false);
     if (dataRecieved && !doneLoading) {
         findCourse(homePageData, reviewsData, coursePageData);
-
+        document.documentElement.scrollTop = 0;
         setDoneLoading(true);
     }
     courseId = useParams().courseId;
@@ -38,6 +38,7 @@ function CoursePage() {
             {dataRecieved ? (
                 <>
                     <CourseDetailsCard
+                        reachBottom={reachBottom}
                         courseImg={courseData.image_480x270}
                         newPrice="E£149.99"
                         oldPrice="E£679.99"
